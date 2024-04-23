@@ -14,6 +14,7 @@
         snippet = {expand = "luasnip";};
         formatting = {fields = ["kind" "abbr" "menu"];};
         sources = [
+          {name = "git";}
           {name = "nvim_lsp";}
           {name = "emoji";}
           {
