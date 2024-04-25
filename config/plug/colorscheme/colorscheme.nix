@@ -1,13 +1,11 @@
-{ config, ... }:
-let
-  lua = x: { __raw = x; };
-in
-{
+{config, ...}: let
+  lua = x: {__raw = x;};
+in {
   colorschemes = {
     base16 = {
       enable = false;
       setUpBar = false;
-      colorscheme = import ../../colors/${config.theme}.nix { };
+      colorscheme = import ../../colors/${config.theme}.nix {};
     };
     gruvbox = {
       enable = false;
@@ -88,7 +86,7 @@ in
           light = "macchiato";
           dark = "mocha";
         };
-        flavour = "frappe"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
+        flavour = "mocha"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
         disableBold = false;
         disableItalic = false;
         disableUnderline = false;
@@ -113,10 +111,10 @@ in
               background = true;
             };
             underlines = {
-              errors = [ "underline" ];
-              hints = [ "underline" ];
-              information = [ "underline" ];
-              warnings = [ "underline" ];
+              errors = ["underline"];
+              hints = ["underline"];
+              information = ["underline"];
+              warnings = ["underline"];
             };
           };
         };
