@@ -1,11 +1,13 @@
-{config, ...}: let
-  lua = x: {__raw = x;};
-in {
+{ config, ... }:
+let
+  lua = x: { __raw = x; };
+in
+{
   colorschemes = {
     base16 = {
-      enable = true;
+      enable = false;
       setUpBar = false;
-      colorscheme = import ../../colors/${config.theme}.nix {};
+      colorscheme = import ../../colors/${config.theme}.nix { };
     };
     gruvbox = {
       enable = false;
@@ -80,7 +82,7 @@ in {
       };
     };
     catppuccin = {
-      enable = false;
+      enable = true;
       settings = {
         background = {
           light = "macchiato";
@@ -90,7 +92,7 @@ in {
         disableBold = false;
         disableItalic = false;
         disableUnderline = false;
-        transparentBackground = true;
+        transparentBackground = false;
         integrations = {
           cmp = true;
           noice = true;
@@ -111,10 +113,10 @@ in {
               background = true;
             };
             underlines = {
-              errors = ["underline"];
-              hints = ["underline"];
-              information = ["underline"];
-              warnings = ["underline"];
+              errors = [ "underline" ];
+              hints = [ "underline" ];
+              information = [ "underline" ];
+              warnings = [ "underline" ];
             };
           };
         };

@@ -1,7 +1,6 @@
-{
-  config,
-  lib,
-  ...
+{ config
+, lib
+, ...
 }: {
   imports = [
     ./keys.nix
@@ -47,7 +46,7 @@
     ./plug/utils/comment.nix
     ./plug/utils/copilot.nix
     ./plug/utils/flash.nix
-    ./plug/utils/hardtime.nix
+    #    ./plug/utils/hardtime.nix
     #./plug/utils/harpoon.nix
     ./plug/utils/grapple.nix
     ./plug/utils/illuminate.nix
@@ -60,7 +59,7 @@
   options = {
     theme = lib.mkOption {
       default = "paradise";
-      type = lib.types.enum ["paradise" "mountain" "tokyonight" "everforest" "everblush" "jellybeans" "aquarium" "gruvbox"];
+      type = lib.types.enum [ "paradise" "mountain" "tokyonight" "everforest" "everblush" "jellybeans" "aquarium" "gruvbox" ];
     };
   };
   config = {
